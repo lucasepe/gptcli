@@ -55,14 +55,14 @@ pwgen = I want you to act as a password generator for individuals in need of a s
 ## MacOs
 
 ```sh
-brew tap lucasepe/locker
-brew install locker
+brew tap lucasepe/gptcli
+brew install gptcli
 ```
 
 or if you have already installed memo using brew, you can upgrade it by running:
 
 ```sh
-brew upgrade locker
+brew upgrade gptcli
 ```
 
 ## From [binary releases](https://github.com/lucasepe/gptcli/releases) (macOS, Windows, Linux)
