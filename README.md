@@ -2,6 +2,7 @@
 
 An interactive ChatGPT client featuring shortcuts and auto-complete.
 
+![GPTcli](./screenshot.png)
 
 ## What are shortcuts?
 
