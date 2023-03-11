@@ -68,7 +68,7 @@ brew upgrade gptcli
 
 ## From [binary releases](https://github.com/lucasepe/gptcli/releases) (macOS, Windows, Linux)
 
-memo currently provides pre-built binaries for the following:
+Pre-built binaries for the following:
 
 - macOS (Darwin)
 - Windows
