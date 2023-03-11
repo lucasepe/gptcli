@@ -1,0 +1,37 @@
+# Run locally with: goreleaser --clean --snapshot --skip-publish
+project_name: gptcli
+before:
+  hooks:
+    - go mod tidy
+    - go mod download
+builds:
+- env:
+    - CGO_ENABLED=0
+  ldflags:
+    - -s -w -X "main.Version={{.Version}}" -X "main.Build={{.ShortCommit}}"
+    - -a -extldflags "-static"
+  goos:
+    - windows
+    - linux
+    - darwin
+  goarch:
+    - arm64
+    - amd64
+archives:
+  - name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    format_overrides:
+      - goos: windows
+        format: zip
+
+brews:
+  - homepage: 'https://github.com/lucasepe/gptcli'
+    description: 'An interactive ChatGPT client featuring shortcuts and auto-complete.'
+    folder: Formula
+    commit_author:
+      name: lucasepe
+      email: luca.sepe@gmail.it
+    tap:
+      owner: lucasepe
+      name: homebrew-gptcli
+    install: |
+      bin.install "gptcli"
